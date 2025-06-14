@@ -1,0 +1,47 @@
+import java.util.Scanner;
+// This class is a placeholder for the task description and does not contain any functionality.
+public class task {
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine();
+
+            System.out.print("Enter your age: ");
+            String ageInput = scanner.nextLine();
+
+            System.out.print("Enter your profession: ");
+            String profession = scanner.nextLine();
+
+            int Age;
+            try {
+                Age = Integer.parseInt(ageInput);
+                if (Age < 0) {
+                    System.out.println("Age cannot be negative.");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid age. Please enter a valid number.");
+                return;
+            }
+
+            // Print formatted summary
+            System.out.println("name       : " + name);
+            System.out.println("Age        : " + Age);
+            System.out.println("Profession : " + profession);
+            // Conditional message based on age
+
+            if (Age >= 13 && Age <=19) {
+                System.out.println("Message    : You're a teenager.");
+            } else if (Age < 13) {
+                System.out.println("Message    : You're a child.");
+            } else if (Age <= 59) {
+                System.out.println("Message    : You're an adult.");
+            } else {
+                System.out.println("Message    : You're a senior citizen.");
+            }
+        }
+    }
+
+}
